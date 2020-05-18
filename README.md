@@ -35,13 +35,13 @@ The following should be configured by the user, according to their environment.
   * python check_route.py
 
 # Comments
-Since the testing was done on WSL Ubuntu 18.04.3 and we wanted it to run via crontab, we also had to enable cron services.
-* service cron start
-For the cron to always start when the WSL is activated:
-* Edit /root/.bashrc, and add the following line at the very end: service cron start
+1 .Since the testing was done on WSL Ubuntu 18.04.3 and we wanted it to run via crontab, we also had to enable cron services.
+_service cron start_
+
+2. For the cron to always start when the WSL is activated: Edit /root/.bashrc, and add the following line at the very end: _service cron start_
 (https://scottiestech.info/2018/08/07/run-cron-jobs-in-windows-subsystem-for-linux/)
-The way to configure crontab with example:
-* 00 07 * * * cd /home/user_home_directory/script_directory/ && /home/user_home_directory/virtual_enviornment_directory/bin/python3 check_route.py > /tmp/cron.log 2>&1
+
+3. The way to configure crontab with example: _00 07 * * * cd /home/user_home_directory/script_directory/ && /home/user_home_directory/virtual_enviornment_directory/bin/python3 check_route.py > /tmp/cron.log 2>&1_
 
 # Author(s)
 This project was written and is maintained by the following individuals

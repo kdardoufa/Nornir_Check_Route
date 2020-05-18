@@ -9,7 +9,7 @@ Using Nornir greatly improved performance! The devices using the backup link are
 
 # Configuration
 The following should be configured by the user, according to their environment.
-- inventory directory: defaults.yaml, devices.yaml, groups.yaml
+- inventory directory: defaults.yaml, getvpn_hosts.yaml, groups.yaml
 - variable: route --> route_to_be_specivied_by_user 
 
 # Technologies & Frameworks Used

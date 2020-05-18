@@ -21,7 +21,7 @@ The following should be configured by the user, according to their environment.
   * git clone https://github.com/kdardoufa/Nornir_Check_Route.git
 
 2. cd into directory
-  * cd DeviceInfo_from_PI
+  * cd Nornir_Check_Route
 
 3. Create the virtual environment in a sub dir in the same directory
   * python3 -m venv venv

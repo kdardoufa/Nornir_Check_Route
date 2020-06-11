@@ -6,12 +6,19 @@ when the backup link is utilized a specific route dissappears from the routing t
 The initial attempt was done creating a scheduled job in Cisco Prime Infrastructure, but the process took a long time and involved
 manually going over the output to figure out which devices where using the backup link. 
 Using Nornir greatly improved performance! The devices using the backup link are written to a file (name/IP address). This is done via the script "check_route.py".
+The file is great... but wouldn't be better if an email, with the devices in the e-mail body? This is done via the script "check_route_mail.py"
 
 
 # Configuration
 The following should be configured by the user, according to their environment.
 - inventory directory: defaults.yaml, getvpn_hosts.yaml, groups.yaml
-- variable: route --> route_to_be_specified_by_user 
+- variable: route --> route_to_be_specified_by_user
+
+For e-mails the user needs to specify the following variables:
+- exchange_sender --> "email of sender to be specified by user"
+- exchange_passwd --> "sender password for authentication to be specified by user"
+- smtp_server --> "smtp server to be specified by user"
+- recipients --> "comma seperated emails" (works with multiple recipients example recipients = "test1@expamle.com,test2@example.com")
 
 # Technologies & Frameworks Used
 * Nornir.

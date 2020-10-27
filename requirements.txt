@@ -15,7 +15,7 @@ ciscoconfparse==1.4.11
 Click==7.0
 colorama==0.4.3
 cookiecutter==1.6.0
-cryptography==2.7
+cryptography==3.2
 dataclasses==0.7
 decorator==4.4.1
 dill==0.3.0

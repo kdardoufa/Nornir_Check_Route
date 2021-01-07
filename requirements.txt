@@ -56,7 +56,7 @@ jsonpickle==1.2
 junit-xml==1.8
 junos-eznc==2.3.1
 lazy-object-proxy==1.4.3
-lxml==4.4.1
+lxml==4.6.2
 MarkupSafe==1.1.1
 mccabe==0.6.1
 multidict==4.5.2

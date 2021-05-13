@@ -99,7 +99,7 @@ pyats.topology==19.11
 pyats.utils==19.11
 pycodestyle==2.5.0
 pycparser==2.19
-pydantic==0.18.2
+pydantic==1.6.2
 pyeapi==0.8.2
 Pygments==2.5.2
 pyIOSXR==0.53

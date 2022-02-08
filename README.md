@@ -6,7 +6,7 @@ when the backup link is utilized a specific route dissappears from the routing t
 The initial attempt was done creating a scheduled job in Cisco Prime Infrastructure, but the process took a long time and involved
 manually going over the output to figure out which devices where using the backup link. 
 Using Nornir greatly improved performance! The devices using the backup link are written to a file (name/IP address). This is done via the script "check_route.py".
-The file is great... but wouldn't be better if an email, with the devices in the e-mail body? This is done via the script "check_route_mail.py"
+The file is great... but wouldn't it be better if an email was sent, with the devices in the e-mail body? This is done via the script "check_route_mail.py"
 
 
 # Configuration
@@ -22,8 +22,11 @@ For e-mails the user needs to specify the following variables:
 
 # Technologies & Frameworks Used
 * Nornir.
-* WSL - Ubuntu 18.04.3
-* The script is written in Python 3.
+* WSL - Ubuntu 18.04.3 LTS 
+* The script is written in Python 3. Tested also with Python3.8.10
+Update (Feb 8th 2022): 
+* Tests have been made with Ubuntu 20.04.3 LTS, python3.8.10 and nornir 2.5 (last version on the 2.x train)
+* A version adapted for Nornir 3.x train will be developed soon.
 
 # Installation
 1. Clone the repo
@@ -53,4 +56,5 @@ _service cron start_
 
 # Author(s)
 This project was written and is maintained by the following individuals
-> Katerina Dardoufa (kdardoufa@gmail.com)
+> Katerina Dardoufa (kdardoufa@gmail.com) - Author & maintainer
+> Ioannis Theodoridis - maintainer

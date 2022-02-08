@@ -9,18 +9,14 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-exchange_sender = "email of sender to be specified by user"
-exchange_passwd = "sender password for authentication to be specified by user"
-smtp_server = "smtp server to be specified by user"
-#works with multiple recipients example recipients = "test1@expamle.com,test2@example.com"
-recipients = "comma seperated emails"
-smtp_port = 25
-device_list = []
-hostname = []
-ip_addr = []
-
-
 def my_sendmail(mail_body):
+    exchange_sender = "email of sender to be specified by user"
+    exchange_passwd = "sender password for authentication to be specified by user"
+    smtp_server = "smtp server to be specified by user"
+    #works with multiple recipients example recipients = "test1@expamle.com,test2@example.com"
+    recipients = "comma seperated emails"
+    smtp_port = 25
+
     msg = MIMEMultipart()
     msg['From'] = exchange_sender
     msg['To'] = recipients
@@ -36,20 +32,22 @@ def my_sendmail(mail_body):
     server.quit()
 # End of function
 
-
-
 def main():
+    hostname = []
+    device_list = []
+    ip_addr = []
+
     #print("Beginning: ", datetime.now())
     nr = InitNornir(config_file="config.yaml")
-
+    route = input("Please type route to check and press enter: ")
     # info contains the output of the command
-    info = nr.run(task=netmiko_send_command, command_string="show ip route | in 1.1.1.1")
+    info = nr.run(task=netmiko_send_command, command_string="show ip route | in "+route)
 
     # Get hosts to use as argument in info['hosts'].result
     for dev in nr.inventory.hosts.keys():
         output =  info[dev].result
         #ip_addr = nr.inventory.hosts[dev].hostname
-        if "1.1.1.1" not in output:
+        if route not in output:
             device_list.append(dev)
     # Create one list with hostnames and one list with ip addresses
     for host in device_list:
@@ -64,8 +62,8 @@ def main():
         tmp = json.dumps(output_dev)
         mail_body = tmp.replace("\"","").replace(",","\n").strip("{").strip("}")
         my_sendmail(mail_body)
+
     return()
 
 
-if __name__ == "__main__":
-    main()
+

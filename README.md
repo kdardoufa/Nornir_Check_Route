@@ -24,6 +24,7 @@ For e-mails the user needs to specify the following variables:
 * Nornir.
 * WSL - Ubuntu 18.04.3 LTS 
 * The script is written in Python 3. Tested also with Python3.8.10
+
 Update (Feb 8th 2022): 
 * Tests have been made with Ubuntu 20.04.3 LTS, python3.8.10 and nornir 2.5 (last version on the 2.x train)
 * A version adapted for Nornir 3.x train will be developed soon.
@@ -57,4 +58,5 @@ _service cron start_
 # Author(s)
 This project was written and is maintained by the following individuals
 > Katerina Dardoufa (kdardoufa@gmail.com) - Author & maintainer
+
 > Ioannis Theodoridis - maintainer
